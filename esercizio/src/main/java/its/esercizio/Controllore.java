@@ -14,6 +14,19 @@ import org.springframework.web.bind.annotation.RequestParam;
             model.addAttribute("risultato", somma);
             return "result";
         }
+        @GetMapping("/sottrazione")
+        public String Sottrazione(@RequestParam("valore") int val1, @RequestParam("valore2") int val2, Model model) {
+            int differenza = val1 - val2;
+            model.addAttribute("risultato", differenza);
+            return "result";
+        }
+        @GetMapping("/moltiplicazione")
+        public String Moltiplicazione(@RequestParam("valore") int val1, @RequestParam("valore2") int val2, Model model) {
+            int prodotto = val1 * val2;
+            model.addAttribute("risultato", prodotto);
+            return "result";
+        }
+
 
     }
 
